@@ -85,14 +85,14 @@ func printFn(args ...OBJ) OBJ {
 				if e != nil {
 					// this happens sometimes when working on things like
 					// nested json, so we just use the original string instead
-					fmt.Printf(orig + " ")
+					fmt.Print(orig + " ")
 				}
 				fmt.Println(s + " ")
 				return NULL
 			}
 		}
 
-		fmt.Printf(s + " ")
+		fmt.Print(s + " ")
 	}
 
 	fmt.Println()

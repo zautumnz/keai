@@ -3,7 +3,6 @@ package evaluator
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -279,7 +278,7 @@ func cpFn(args ...OBJ) OBJ {
 func templateFn(env *ENV, args ...OBJ) OBJ {
 	switch a := args[0].(type) {
 	case *object.String:
-		b, err := ioutil.ReadFile(a.Value)
+		b, err := os.ReadFile(a.Value)
 		if err != nil {
 			return NewError("Error reading template file: %s", err)
 		}

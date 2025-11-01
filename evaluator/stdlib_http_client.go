@@ -7,7 +7,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"reflect"
 	"strings"
@@ -271,7 +270,7 @@ func (r *Response) Body() ([]byte, error) {
 		return nil, errors.New("response or body is nil")
 	}
 
-	b, err := ioutil.ReadAll(r.resp.Body)
+	b, err := io.ReadAll(r.resp.Body)
 	if err != nil {
 		return nil, err
 	}
@@ -379,7 +378,7 @@ func httpClient(args ...OBJ) OBJ {
 	resp, err := req.request(method, uri, body)
 
 	if err != nil {
-		return NewError(err.Error())
+		return NewError2(err.Error())
 	}
 
 	// inner http.Response struct
@@ -387,7 +386,7 @@ func httpClient(args ...OBJ) OBJ {
 
 	bod, err := resp.Content()
 	if err != nil {
-		return NewError(err.Error())
+		return NewError2(err.Error())
 	}
 	resHeaders := make(StringObjectMap)
 	for k, v := range res.Header {

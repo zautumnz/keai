@@ -8,7 +8,6 @@ import (
 	"flag"
 	"fmt"
 	"io/fs"
-	"io/ioutil"
 	"os"
 	"strings"
 
@@ -37,7 +36,7 @@ func getStdlibString() string {
 				return err
 			}
 			if strings.HasSuffix(path, ".keai") {
-				c, err := ioutil.ReadFile(path)
+				c, err := os.ReadFile(path)
 				if err != nil {
 					return err
 				}
@@ -118,7 +117,7 @@ func main() {
 	var err error
 
 	if len(flag.Args()) > 0 {
-		input, err = ioutil.ReadFile(os.Args[1])
+		input, err = os.ReadFile(os.Args[1])
 	} else {
 		fmt.Printf("keai version %s\n", KEAI_VERSION)
 		fmt.Println("Use ctrl+d to quit")

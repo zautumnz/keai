@@ -3,7 +3,6 @@ package repl
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"os/user"
 	"strconv"
@@ -52,7 +51,7 @@ func getHomeBasedFile(path string) string {
 // init file idea, but not code, taken from github.com/abs-lang
 func getInitFile() string {
 	filePath := getHomeBasedFile(".keai_init")
-	s, err := ioutil.ReadFile(filePath)
+	s, err := os.ReadFile(filePath)
 	if err != nil {
 		return ""
 	}

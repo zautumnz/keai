@@ -5,7 +5,6 @@ package evaluator
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"math"
 	"os"
 	"strings"
@@ -222,7 +221,7 @@ func EvalModule(name string) OBJ {
 		return NewError("ImportError: no module named '%s'", name)
 	}
 
-	b, err := ioutil.ReadFile(filename)
+	b, err := os.ReadFile(filename)
 	if err != nil {
 		return NewError("IOError: error reading module '%s': %s", name, err)
 	}
@@ -862,7 +861,7 @@ func evalIdentifier(node *ast.Identifier, env *ENV) OBJ {
 	}
 	fmt.Println("identifier not found: " + node.Value)
 	utils.ExitConditionally(1)
-	return NewError("identifier not found: " + node.Value)
+	return NewError2("identifier not found: " + node.Value)
 }
 
 func evalExpression(exps []ast.Expression, env *ENV) []OBJ {
