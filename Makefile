@@ -43,4 +43,7 @@ test: ## lint and test
 tags: ## generate ctags
 	@ctags --exclude=x --exclude=examples --exclude=editor -R .
 
+version: ## bump semver version, see git-release.sh for details
+	./git-release.sh patch
+
 .PHONY: clean install tags

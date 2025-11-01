@@ -1,6 +1,6 @@
 # keai (可爱)
 
-## Abandoned
+## Semi-Abandoned
 
 This was a fun project to help me learn more about PLD and Go, but I don't
 really have much time for it or interest in it anymore. You are more than

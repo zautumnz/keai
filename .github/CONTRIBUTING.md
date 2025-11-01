@@ -10,4 +10,4 @@ Contributions are welcome!
         example if you're adding a feature.
 * Follow the
     [Rust Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct).
-* Releases should be done with the `git-release.sh` script in project root.
+* Run `make help` for a list and descriptions of Make targets.
