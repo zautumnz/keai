@@ -1,6 +1,6 @@
 module github.com/zautumnz/keai
 
-go 1.25.3
+go 1.25
 
 require github.com/chzyer/readline v1.5.1
 
