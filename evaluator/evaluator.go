@@ -861,7 +861,7 @@ func evalIdentifier(node *ast.Identifier, env *ENV) OBJ {
 	}
 	fmt.Println("identifier not found: " + node.Value)
 	utils.ExitConditionally(1)
-	return NewError2("identifier not found: " + node.Value)
+	return NewError("identifier not found: %s", node.Value)
 }
 
 func evalExpression(exps []ast.Expression, env *ENV) []OBJ {

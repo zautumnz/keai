@@ -113,13 +113,6 @@ func Interpolate(str string, env *ENV) string {
 	return str
 }
 
-// NewError2 prints and returns an error with no sprintf
-// TODO: this is annoying, but I just wanna build real quick
-// before sleep
-func NewError2(s string) *object.Error {
-	return &object.Error{Message: s}
-}
-
 // NewError prints and returns an error
 func NewError(format string, a ...interface{}) *object.Error {
 	message := fmt.Sprintf(format, a...)

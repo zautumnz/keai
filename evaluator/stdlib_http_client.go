@@ -378,7 +378,7 @@ func httpClient(args ...OBJ) OBJ {
 	resp, err := req.request(method, uri, body)
 
 	if err != nil {
-		return NewError2(err.Error())
+		return NewError("%s", err.Error())
 	}
 
 	// inner http.Response struct
@@ -386,7 +386,7 @@ func httpClient(args ...OBJ) OBJ {
 
 	bod, err := resp.Content()
 	if err != nil {
-		return NewError2(err.Error())
+		return NewError("%s", err.Error())
 	}
 	resHeaders := make(StringObjectMap)
 	for k, v := range res.Header {
