@@ -30,6 +30,9 @@
 
 ## Possible Future Features
 
+* LSP
+* Treesitter
+* Zed syntax
 * Tests written in keai
     * If they can somehow count towards coverage from `go test` that would be
         cool
